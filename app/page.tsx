@@ -268,6 +268,19 @@ export default function Home() {
             <p>No articles yet. Paste a URL or text above to get started.</p>
           </div>
         )}
+
+        {/* Attribution */}
+        <div className="text-center text-zinc-700 text-xs mt-12 pt-8 border-t border-zinc-900">
+          Inspired by{' '}
+          <a
+            href="https://x.com/packyM/status/2011844959544955289"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-zinc-500 underline underline-offset-2"
+          >
+            Packy McCormick&apos;s tweet
+          </a>
+        </div>
       </div>
     </div>
   );
