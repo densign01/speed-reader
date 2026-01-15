@@ -152,7 +152,17 @@ export default function SpeedReader({
 
   const getFocusPoint = (word: string) => {
     if (!word) return { before: '', focus: '', after: '' };
-    const focusIndex = Math.max(0, Math.floor(word.length * 0.3));
+
+    // ORP (Optimal Recognition Point) lookup table based on word length
+    // Research shows the focus point is slightly left of center
+    const len = word.length;
+    let focusIndex: number;
+    if (len > 13) focusIndex = 4;
+    else if (len >= 10) focusIndex = 3;
+    else if (len >= 6) focusIndex = 2;
+    else if (len >= 2) focusIndex = 1;
+    else focusIndex = 0;
+
     return {
       before: word.slice(0, focusIndex),
       focus: word[focusIndex] || '',
