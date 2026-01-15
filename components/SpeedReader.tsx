@@ -189,13 +189,13 @@ export default function SpeedReader({
           {/* Word display */}
           <div className="h-40 flex items-center justify-center relative">
             {/* Focus line indicator */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-red-500/30 transform -translate-x-1/2" />
+            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-red-500/30 transform -translate-x-1/2 z-10" />
 
             {wordsPerFlash === 1 ? (
-              <div className="text-5xl md:text-7xl font-mono tracking-tight">
-                <span className="text-zinc-400">{before}</span>
+              <div className="flex text-5xl md:text-7xl font-mono tracking-tight">
+                <span className="text-zinc-400 text-right w-[45vw] max-w-[300px]">{before}</span>
                 <span className="text-red-500">{focus}</span>
-                <span className="text-white">{after}</span>
+                <span className="text-white text-left w-[45vw] max-w-[300px]">{after}</span>
               </div>
             ) : (
               <div className="text-4xl md:text-5xl font-mono tracking-tight text-white text-center">
